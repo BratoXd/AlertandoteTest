@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+/* src/index.css */
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.loader {
+  border: 8px solid #f3f3f3; /* Color del fondo del loader */
+  border-top: 8px solid #3498db; /* Color de la parte superior */
+  border-radius: 50%; /* Hace que el loader sea circular */
+  width: 60px; /* Ancho del loader */
+  height: 60px; /* Alto del loader */
+  animation: spin 1s linear infinite; /* Animación de giro */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
