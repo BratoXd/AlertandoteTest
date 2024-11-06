@@ -44,12 +44,13 @@ Visita http://localhost:4000 en tu navegador para interactuar con el frontend.
 
 
 ## Tecnologías Utilizadas
-- Backend:
+  Backend:
 - Node.js
 - Express
 - Passport (Google OAuth)
 - AWS SDK
-- Frontend:
+ 
+Frontend:
 - React
 - Tailwind CSS
 - Axios
