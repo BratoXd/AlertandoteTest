@@ -21,51 +21,49 @@ Este proyecto es una prueba técnica para el servicio **Alertandote**, que permi
    ```bash
    git clone https://github.com/tu-usuario/AlertandoteTest.git
    cd AlertandoteTest
-Instalar las dependencias del backend y frontend
+## Instalar las dependencias del backend y frontend
 Primero instala las dependencias del backend:
 
 cd alertandote-api
 npm install 
-Luego instala las dependencias del frontend:
+## Luego instala las dependencias del frontend:
    
    bash
 cd ../alertandote-frontend
 npm install
 
-Iniciar el proyecto
+## Iniciar el proyecto
 Asegúrate de que el backend y el frontend estén configurados correctamente antes de iniciar los servidores.
 
 
 
-Uso
+## Uso
 Iniciar el backend Desde la carpeta alertandote-api, ejecuta:
 
 bash
-Copiar código
+
 npm start
 Iniciar el frontend Desde la carpeta alertandote-frontend, ejecuta:
 
 bash
-Copiar código
 npm start
 
-
-Acceder a la aplicación
+## Acceder a la aplicación
 Visita http://localhost:4000 en tu navegador para interactuar con el frontend.
 
 
-Tecnologías Utilizadas
-Backend:
-Node.js
-Express
-Passport (Google OAuth)
-AWS SDK
-Frontend:
-React
-Tailwind CSS
-Axios
+## Tecnologías Utilizadas
+[Backend:]
+[Node.js]
+[Express]
+[Passport (Google OAuth)]
+[AWS SDK]
+[Frontend:]
+[React]
+[Tailwind CSS]
+[Axios]
 
 
-Contacto
-Desarrollador: Braulio Cesar Hernandez
+## Contacto
+Desarrollador: Cesar Hernandez Rejon
 Correo: brauliocesar.hr@gmail.com
