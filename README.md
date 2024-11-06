@@ -16,7 +16,7 @@ Este proyecto es una prueba técnica para el servicio **Alertandote**, que permi
 1. **Clonar el repositorio**
    ```bash
    git clone https://github.com/tu-usuario/AlertandoteTest.git
-   cd AlertandoteTest
+ 
 ## Instalar las dependencias del backend y frontend
 Primero instala las dependencias del backend:
    
