@@ -4,10 +4,10 @@
 Este proyecto es una prueba técnica para el servicio **Alertandote**, que permite a los usuarios autenticarse con Google y cargar archivos de audio a AWS S3.
 
 ## Tabla de contenidos
-- [Instalación](#instalación)
-- [Uso](#uso)
-- [Tecnologías Utilizadas](#tecnologías-utilizadas)
-- [Contacto](#contacto)
+- Instalación 
+- Uso
+- Tecnologías Utilizadas
+- Contacto
 
 ---
 
@@ -32,7 +32,7 @@ Primero instala las dependencias del backend:
 ## Iniciar el proyecto
 Asegúrate de que el backend y el frontend estén configurados correctamente antes de iniciar los servidores.
 
-##uso
+## Uso
 Iniciar el backend Desde la carpeta alertandote-api, ejecuta:
 
       npm start
