@@ -5,12 +5,8 @@ Este proyecto es una prueba técnica para el servicio **Alertandote**, que permi
 
 ## Tabla de contenidos
 - [Instalación](#instalación)
-- [Configuración](#configuración)
 - [Uso](#uso)
-- [Rutas](#rutas)
 - [Tecnologías Utilizadas](#tecnologías-utilizadas)
-- [Estructura del Proyecto](#estructura-del-proyecto)
-- [Contribución](#contribución)
 - [Contacto](#contacto)
 
 ---
@@ -23,45 +19,42 @@ Este proyecto es una prueba técnica para el servicio **Alertandote**, que permi
    cd AlertandoteTest
 ## Instalar las dependencias del backend y frontend
 Primero instala las dependencias del backend:
-
-cd alertandote-api
-npm install 
+  
+   
+    cd alertandote-api
+    npm install 
 ## Luego instala las dependencias del frontend:
    
-   bash
-cd ../alertandote-frontend
-npm install
+     cd ../alertandote-frontend
+     npm install
+  
 
 ## Iniciar el proyecto
 Asegúrate de que el backend y el frontend estén configurados correctamente antes de iniciar los servidores.
 
-
-
-## Uso
+##uso
 Iniciar el backend Desde la carpeta alertandote-api, ejecuta:
 
-bash
-
-npm start
+      npm start
 Iniciar el frontend Desde la carpeta alertandote-frontend, ejecuta:
 
-bash
-npm start
+
+      npm start
 
 ## Acceder a la aplicación
 Visita http://localhost:4000 en tu navegador para interactuar con el frontend.
 
 
 ## Tecnologías Utilizadas
-[Backend:]
-[Node.js]
-[Express]
-[Passport (Google OAuth)]
-[AWS SDK]
-[Frontend:]
-[React]
-[Tailwind CSS]
-[Axios]
+- Backend:
+- Node.js
+- Express
+- Passport (Google OAuth)
+- AWS SDK
+- Frontend:
+- React
+- Tailwind CSS
+- Axios
 
 
 ## Contacto
