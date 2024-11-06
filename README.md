@@ -19,13 +19,12 @@ Este proyecto es una prueba técnica para el servicio **Alertandote**, que permi
    cd AlertandoteTest
 ## Instalar las dependencias del backend y frontend
 Primero instala las dependencias del backend:
-  
    
-    cd alertandote-api
+    cd \alertandote-api\oauth2-server
     npm install 
 ## Luego instala las dependencias del frontend:
    
-     cd ../alertandote-frontend
+     cd ..\AlertandoteTest\file-upload>
      npm install
   
 
@@ -35,9 +34,8 @@ Asegúrate de que el backend y el frontend estén configurados correctamente ant
 ## Uso
 Iniciar el backend Desde la carpeta alertandote-api, ejecuta:
 
-      npm start
+      node server.js
 Iniciar el frontend Desde la carpeta alertandote-frontend, ejecuta:
-
 
       npm start
 
