@@ -9,7 +9,6 @@ const FileUpload = () => {
     const [uploadedFiles, setUploadedFiles] = useState([]); // Estado para almacenar archivos subidos    
     const fileInputRef = useRef(null); // Referencia para el input de archivo
 
-
     const handleFileChange = (e) => {
         setFile(e.target.files[0]);
  
@@ -98,10 +97,7 @@ const FileUpload = () => {
                     </ul>
                 </div>
             </div>
-
- 
         </div>
     );
 };
-
 export default FileUpload;

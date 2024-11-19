@@ -7,8 +7,6 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const fileUploadRouter = require('./fileUpload');
 const cors = require('cors');
 const path = require('path');  
-
- 
 const app = express();
  
 app.use(cors({
@@ -16,11 +14,16 @@ app.use(cors({
     credentials: true,  
   }));
 
- 
+  
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: true,
+  cookie: {
+    httpOnly: true,
+    secure: false, // Cambiar a `true` si usas HTTPS
+    sameSite: 'lax', // Controla cómo se envían las cookies
+  },
 }));
 
  
@@ -39,11 +42,9 @@ passport.use(new GoogleStrategy({
     accessToken,
     refreshToken
   };
+  
   return done(null, user);
 }));
-
-
-
 
 
 // Serializar y deserializar usuario
@@ -54,11 +55,25 @@ passport.serializeUser((user, done) => {
 passport.deserializeUser((user, done) => {
   done(null, user);
 });
+
 app.get('/auth/status', (req, res) => {
-    res.json({ isAuthenticated: req.isAuthenticated() });
+  if (req.isAuthenticated()) {
+      // Usuario autenticado exitosamente
+      res.status(200).json({
+          authenticated: true,
+          user: req.user, // Información del usuario autenticado
+      });
+  } else {
+      // Usuario no autenticado
+      res.status(200).json({
+          authenticated: false,
+          attemptedUser: req.session?.attemptedUser || null, // Datos del intento fallido si están guardados
+          message: "User not authenticated",
+      });
+  }
 });
 
- 
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Ruta principal
@@ -68,32 +83,35 @@ app.get('/', (req, res) => {
 
 
 // Ruta de autenticación con Google
-app.get('/auth/google', passport.authenticate('google', {
+app.get('/auth/google', 
+  passport.authenticate('google', {
   scope: ['profile', 'email']
 }));
 
-// Callback de Google para redirigir después de autenticación exitosa
-app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/' }), (req, res) => {
-    res.redirect('http://localhost:3000/'); 
-});
 
-// Ruta protegida que requiere autenticación
-app.get('http://localhost:3000/', ensureAuthenticated, (req, res) => {
-  res.send(`<h1>Perfil de usuario</h1><p>${JSON.stringify(req.user.profile)}</p><a href="/logout">Cerrar sesión</a>`);
-});
-
- 
-function ensureAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) {
-    return next();
+app.get(
+  '/auth/google/callback',
+  (req, res, next) => {
+    console.log("Parametros de la URL:", req.query);  // Verifica los parámetros de la URL
+    if (req.query.error) {
+      console.log("Error en la autenticación:", req.query.error);
+      return res.redirect('http://localhost:3000');
+    }
+    next();
+  },
+  passport.authenticate('google', {
+    failureRedirect: '/login',
+    failureMessage: true,
+  }),
+  (req, res) => {
+    res.redirect('http://localhost:3000');
   }
-  res.redirect('/');
-}
+);
+
 
 
 app.use('/api/upload', fileUploadRouter);
 
- 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
   console.log(`Servidor ejecutándose en http://localhost:${PORT}`);
